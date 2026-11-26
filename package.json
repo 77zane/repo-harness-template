@@ -1,0 +1,26 @@
+{
+  "name": "repo-harness-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "会话回放与租户配额服务示例（零外部依赖，同时作为仓库级 AI 工程 Harness 满配参考模板）。",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "check": "node scripts/run-gates.mjs --mode check",
+    "check:quick": "node scripts/run-gates.mjs --mode quick",
+    "check:docs": "node scripts/run-gates.mjs --mode doc-sync",
+    "check:budgets": "node scripts/verify-doc-budgets.mjs",
+    "check:links": "node scripts/verify-md-links.mjs",
+    "check:boundaries": "node scripts/check-boundaries.mjs",
+    "check:tests": "node scripts/check-test-patterns.mjs",
+    "check:hygiene": "node scripts/check-file-hygiene.mjs --check",
+    "fix:hygiene": "node scripts/check-file-hygiene.mjs --fix",
+    "check:contract": "node scripts/check-contract-touch.mjs",
+    "test": "node scripts/run-gates.mjs --test unit,boundary,architecture",
+    "test:unit": "node scripts/run-gates.mjs --test unit",
+    "test:boundary": "node scripts/run-gates.mjs --test boundary",
+    "test:arch": "node scripts/run-gates.mjs --test architecture"
+  }
+}

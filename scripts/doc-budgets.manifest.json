@@ -1,0 +1,10 @@
+{
+  "AGENTS.md": {
+    "maxUnits": 1400,
+    "maxBytes": 5500
+  },
+  "docs/ARCHITECTURE.md": {
+    "maxUnits": 1200,
+    "maxBytes": 5000
+  }
+}
