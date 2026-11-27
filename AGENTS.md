@@ -31,7 +31,7 @@ npm run fix:hygiene   # 自动修复缺失尾换行与混用换行符
 2. **禁止制造兼容债**：优先收束到单一实现路径。除非受外部契约强制约束，否则禁止留下 legacy shim、双轨兜底分支、注释掉的旧代码或无消费者的空抽象。
 3. **测试钉住外部可观测边界**：用户/协议可见行为必须通过真实装配入口测（`tests/boundary/`），不得只测孤立底层类；新增或改动 `scripts/` 门禁、Hook 或文档锚点时，同步在 `tests/architecture/` 补反例自测。修 Bug 必先**证伪红灯**。
 4. **注释只写就近 `Why`**：在反直觉常量、顺序约束或不变量旁写 1–2 行原因；禁止写历史流水账或复述代码。
-5. **只留现在时活文档 & 修 Bug 防复发三件套**：严禁堆进根入口或写历史复盘/决策流水账；修完真实 Bug 同轮补齐活文档（`ARCHITECTURE.md`/`contract.md`）+ 就近 `Why` 注释 + 边界红灯测试或静态门禁（细则见 `pre-pr-check` skill）。
+5. **活文档同轮同步 & 修 Bug 防复发三件套**：严禁堆进根入口或写历史复盘/决策流水账；凡改动架构、接口、行为或边界均须同轮更新对应活文档（`ARCHITECTURE.md`/`contract.md`，纯内部重构无契约变化则在交付说明写明依据）；修完真实 Bug 同轮补齐活文档 + 就近 `Why` 注释 + 边界红灯测试或静态门禁（细则见 `pre-pr-check` skill）。
 6. **高风险改动必过独立只读 Review**：触发范围与双尺子核对清单见 [pre-pr-check/SKILL.md](.agents/skills/pre-pr-check/SKILL.md)。
 7. **3 次失败止损 & Git 安全**：同一根因连改 3 次仍失败立刻停手上浮；未经用户同轮明确指令，严禁执行 `git commit`、`git push`、`rm -rf` 或 `--no-verify`（高危命令与受保护路径同时受 `.agents/hooks.json` 绊线拦截）。
 
