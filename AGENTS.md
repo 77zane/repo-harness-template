@@ -37,5 +37,5 @@ npm run fix:hygiene   # 自动修复缺失尾换行与混用换行符
 
 ## 文档写作与预算维护
 
-- **反废话纪律**：只写当前已生效事实，严禁跨文档复述规则（改用相对链接）、写 `WIP/TODO` 标签、留流水账或贴通用语言教程；相对链接与源码锚点由 `check:links` 与 `test:arch` 机械校验。
+- **反废话纪律**：只写当前已生效事实（临时权宜做法如实标明“当前暂行及原因”，勿混入不可违背红线或核心不变量），严禁跨文档复述规则（改用相对链接）、写 `WIP/TODO` 标签、留流水账或贴通用语言教程；相对链接与源码锚点由 `check:links` 与 `test:arch` 机械校验。
 - **常驻预算与准入**：本文件与 `docs/ARCHITECTURE.md` 受 [scripts/doc-budgets.manifest.json](scripts/doc-budgets.manifest.json) 硬预算约束（`npm run check:budgets`）。超限时按「**下沉迁移 -> 提炼压缩 -> 有理由再调上限**」处理；同一流程失误跨 **2 次会话**复发才准入本文件，且实行零和替换。
